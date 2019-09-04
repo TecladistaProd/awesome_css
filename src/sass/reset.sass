@@ -1,0 +1,24 @@
+$zr: 0
+
+@function retC($type)
+  $retval: 100
+  @if $type == 'px'
+    $retval: 100px
+  @else if $type == '%'
+    $retval: 100%
+  @else if $type == 'vh'
+    $retval: 100vh
+  @else if $type == 'vw'
+    $retval: 100vw
+  @return $retval
+
+*
+  margin: $zr
+  padding: $zr
+  outline: $zr
+  box-sizing: border-box
+
+html, body
+  width: retC('%')
+  min-height: retC('vh')
+  position: relative

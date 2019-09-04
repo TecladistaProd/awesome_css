@@ -1,0 +1,102 @@
+@import url(https://fonts.googleapis.com/css?family=Nunito&display=swap)
+
+@mixin hoFn
+  clip-path: circle(75%)
+  // clip-path: inset(0 0 0 0)
+  background: #00b6ff
+
+@mixin hoFn2
+  clip-path: inset(0 0 0 0)
+  background: #00b6ff
+
+.container-circular
+  width: 30%
+  background: #fff
+  border-radius: 10px
+  position: relative
+  font-family: 'Nunito', sans-serif
+  span
+    font-weight: bold
+    position: absolute
+    top: 0
+    right: 0
+    z-index: 1
+    cursor: pointer
+    width: 40px
+    height: 40px
+    display: inline-flex
+    justify-content: center
+    align-items: center
+    border-radius: 100%
+    transition: color .5s
+    --cl: #fff
+    color: var(--cl)
+    &:hover
+      & ~ .inner
+        @include hoFn
+      --cl: transparent
+  .inner
+    position: relative
+    background: rgb(07, 235, 120)
+    padding: 1em
+    border-radius: 10px
+    width: 100%
+    clip-path: circle(10% at 95% 15%)
+    transition: all .5s ease-in-out
+    $fcolor: #fff
+    h1
+      color: $fcolor
+    p
+      color: $fcolor
+      font-size: .8rem
+      margin: 1em 0
+    &:hover
+      @include hoFn
+      & ~ span
+        --cl: transparent
+
+.container-slide
+  width: 30%
+  background: #fff
+  border-radius: 10px
+  position: relative
+  font-family: 'Nunito', sans-serif
+  span
+    font-weight: bold
+    position: absolute
+    top: 0
+    right: 0
+    z-index: 1
+    cursor: pointer
+    width: 40px
+    height: 40px
+    display: inline-flex
+    justify-content: center
+    align-items: center
+    border-radius: 100%
+    transition: color .5s
+    --cl: #333
+    color: var(--cl)
+    &:hover
+      & ~ .inner
+        @include hoFn2
+      --cl: transparent
+  .inner
+    position: relative
+    background: rgb(07, 235, 120)
+    padding: 1em
+    border-radius: 10px
+    width: 100%
+    clip-path: inset(0% 0% 0% 100%)
+    transition: all .5s ease-in-out
+    $fcolor: #fff
+    h1
+      color: $fcolor
+    p
+      color: $fcolor
+      font-size: .8rem
+      margin: 1em 0
+    &:hover
+      @include hoFn2
+      & ~ span
+        --cl: transparent
